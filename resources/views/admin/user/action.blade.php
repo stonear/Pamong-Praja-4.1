@@ -1,0 +1,2 @@
+<a href="{{ route('admin.user.show', array('id' => $user->id)) }}" class="edit btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>&nbsp;
+<a href="{{ route('admin.user.destroy', array('id' => $user->id)) }}" class="edit btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
