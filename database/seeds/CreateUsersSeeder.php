@@ -25,13 +25,9 @@ class CreateUsersSeeder extends Seeder
                 'id_type' => 'ADMIN',
                 'id_number' => 'ADMIN',
                 'date_of_birth' => Carbon::parse('1945-08-17'),
-                'phone' => 0,
+                'phone' => '0',
                 'community_name' => 'ADMIN',
                 'community_type' => 'ADMIN',
-
-                'forum' => true,
-                'reunion' => true,
-                'run' => true,
 
                 'status' => 'confirmed',
     		],

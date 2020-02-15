@@ -26,18 +26,21 @@ class CreateUsersTable extends Migration
             $table->string('id_type');
             $table->string('id_number');
             $table->date('date_of_birth');
-            $table->integer('phone');
-            $table->string('community_name');
+            $table->string('phone');
+            $table->string('community_name')->nullable();
             $table->string('community_type');
 
-            $table->boolean('forum');
-            $table->boolean('reunion');
-            $table->boolean('run');
+            $table->string('payment_proof')->nullable();
+            $table->unsignedBigInteger('event_id')->nullable();
 
             $table->enum('status', ['registered', 'unconfirmed', 'confirmed']);
 
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
         });
     }
 

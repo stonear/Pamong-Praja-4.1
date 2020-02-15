@@ -26,9 +26,9 @@ class HomeController extends Controller
     public function index(UsersDataTable $dataTable)
     {
         return $dataTable->render('admin.home', [
-            'registered' => User::where('status', 'registered')->count(),
-            'unconfirmed' => User::where('status', 'unconfirmed')->count(),
-            'confirmed' => User::where('status', 'confirmed')->count(),
+            'registered' => User::where('status', 'registered')->where('role', 'USER')->count(),
+            'unconfirmed' => User::where('status', 'unconfirmed')->where('role', 'USER')->count(),
+            'confirmed' => User::where('status', 'confirmed')->where('role', 'USER')->count(),
         ]);
     }
 }

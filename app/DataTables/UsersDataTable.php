@@ -22,6 +22,9 @@ class UsersDataTable extends DataTable
         return datatables()
         ->eloquent($query->where('role', 'USER'))
         ->addIndexColumn()
+        ->editColumn('event', function ($user) {
+            return $user->event->name;
+        })
         ->editColumn('status', function ($user) {
             if($user->status == 'registered') return '<span class="badge badge-primary">Registered</span>';
             else if($user->status == 'unconfirmed') return '<span class="badge badge-danger">Unconfirmed</span>';
@@ -98,11 +101,7 @@ class UsersDataTable extends DataTable
             ->visible(false),
             Column::make('community_type')
             ->visible(false),
-            Column::make('forum')
-            ->visible(false),
-            Column::make('reunion')
-            ->visible(false),
-            Column::make('run')
+            Column::make('event')
             ->visible(false),
             Column::make('status'),
             Column::computed('action')

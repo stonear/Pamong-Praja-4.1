@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Country;
+use App\Event;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -51,6 +52,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'event_id' => ['required', 'numeric'],
+
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -76,6 +79,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'event_id' => $data['event_id'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -90,10 +94,6 @@ class RegisterController extends Controller
             'community_name' => $data['community_name'],
             'community_type' => $data['community_type'],
 
-            'forum' => isset($data['forum']) ? true : false,
-            'reunion' => isset($data['reunion']) ? true : false,
-            'run' => isset($data['run']) ? true : false,
-
             'status' => 'registered',
         ]);
     }
@@ -101,6 +101,11 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $countries = Country::orderBy('name', 'asc')->get();
-        return view('auth.register')->with('countries', $countries);
+        $events = Event::all();
+
+        return view('auth.register', [
+            'countries' => $countries,
+            'events' => $events,
+        ]);
     }
 }
