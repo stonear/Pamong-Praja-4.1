@@ -60,6 +60,16 @@
 				<div class="card-header">Data Diri</div>
 				<div class="card-body">
 					<div class="form-group row">
+                        <label for="event_id" class="col-md-4 col-form-label text-md-right">Kategori</label>
+
+						<div class="col-md-6">
+							<input id="event_id" type="text" class="form-control" name="event_id" value="{{ $user->event->name . ' Rp. ' . number_format($user->event->price) . ',-' }}" disabled autofocus>
+						</div>
+                    </div>
+
+                    <hr/>
+
+					<div class="form-group row">
 						<label for="id" class="col-md-4 col-form-label text-md-right">ID</label>
 
 						<div class="col-md-6">
@@ -147,27 +157,6 @@
 
 						<div class="col-md-6">
 							<input id="community_name" type="text" class="form-control" name="community_name" value="{{ $user->community_name }}" disabled>
-						</div>
-					</div>
-
-					<hr/>
-
-					<div class="row">
-						<div class="col-md-4 text-md-right">Acara yang Diikuti</div>
-
-						<div class="col-md-6">
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox" id="forum" name="forum" value="true" {{ $user->forum ? 'checked' : '' }} disabled>
-								<label class="form-check-label" for="forum">Seminar</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox" id="reunion" name="reunion" value="true" {{ $user->reunion ? 'checked' : '' }} disabled>
-								<label class="form-check-label" for="reunion">Reuni</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox" id="run" name="run" value="true" {{ $user->run ? 'checked' : '' }} disabled>
-								<label class="form-check-label" for="run">Fun Run</label>
-							</div>
 						</div>
 					</div>
 				</div>

@@ -24,6 +24,26 @@
                         @csrf
 
                         <div class="form-group row">
+                            <label for="event_id" class="col-md-4 col-form-label text-md-right">Kategori</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="event_id" name="event_id" required>
+                                    @foreach($events as $e)
+                                    <option value="{{ $e->id }}">{{ $e->name . ' Rp. ' . number_format($e->price) . ',-' }}</option>
+                                    @endforeach
+                                </select>
+
+                                @error('event_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nama</label>
 
                             <div class="col-md-6">
@@ -176,14 +196,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="community_type" class="col-md-4 col-form-label text-md-right">Jenis Instansi</label>
+                            <label for="community_type" class="col-md-4 col-form-label text-md-right">Status Peserta</label>
 
                             <div class="col-md-6">
                                 <select class="form-control" id="community_type" name="community_type" required>
-                                    <option value="APDN">APDN</option>
-                                    <option value="IIP">IIP</option>
-                                    <option value="STPDN">STPDN</option>
-                                    <option value="IPDN">IPDN</option>
+                                    <option value="Purna Praja">Purna Praja</option>
                                     <option value="Akademisi">Akademisi</option>
                                     <option value="Mahasiswa">Mahasiswa</option>
                                     <option value="Umum">Umum</option>
@@ -198,7 +215,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="community_name" class="col-md-4 col-form-label text-md-right">Nama Instansi</label>
+                            <label for="community_name" class="col-md-4 col-form-label text-md-right">Asal Instansi</label>
 
                             <div class="col-md-6">
                                 <input id="community_name" type="text" class="form-control" name="community_name" required>
@@ -208,25 +225,6 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4 text-md-right">Acara yang Diikuti</div>
-
-                            <div class="col-md-6">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="forum" name="forum" value="true">
-                                    <label class="form-check-label" for="forum">Seminar</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="reunion" name="reunion" value="true">
-                                    <label class="form-check-label" for="reunion">Reuni</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="run" name="run" value="true">
-                                    <label class="form-check-label" for="run">Fun Run</label>
-                                </div>
                             </div>
                         </div>
 

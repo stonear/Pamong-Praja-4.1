@@ -5,6 +5,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" rel="stylesheet">
 @endsection
 
+@section('nav-item')
+<li class="nav-item active"><a class="nav-link active" href="{{ route('admin.home') }}">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ route('admin.barcode') }}">Barcode</a></li>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

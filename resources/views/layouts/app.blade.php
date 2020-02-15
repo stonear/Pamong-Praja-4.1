@@ -30,7 +30,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-dark navbar-expand-md bg-dark">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -40,8 +40,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="nav navbar-nav">
+                        @yield('nav-item')
                     </ul>
 
                     <!-- Right Side Of Navbar -->
