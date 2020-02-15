@@ -34,4 +34,6 @@ Route::middleware(['is_admin'])->group(function () {
 	Route::get('admin/user/{id}/verify', 'Admin\UserController@verify')->name('admin.user.verify');
 	Route::get('admin/user/{id}/ticket', 'Admin\UserController@ticket')->name('admin.user.ticket');
 	Route::post('admin/user/{id}/password', 'Admin\UserController@password')->name('admin.user.password');
+	Route::get('admin/barcode', 'Admin\BarcodeController@index')->name('admin.barcode');
+	Route::get('admin/barcode/{UID?}', 'Admin\BarcodeController@search')->name('admin.barcode.search');
 });
