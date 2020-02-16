@@ -15,8 +15,11 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One+SC" />
     <style>
+        .bosc {
+            font-family: 'Bowlby One SC', sans-serif !important;
+        }
         #about {
             background: #212529;
             color: #fff;
@@ -38,8 +41,11 @@
             margin: 20px 10px 20px 10px;
         }
         .jumbotron {
-            margin-bottom: unset;
-            padding-bottom: unset;
+            margin: unset;
+            padding: 20px 0px 0px 0px;
+        }
+        .jumbotron-heading {
+            font-family: 'Bowlby One SC', sans-serif !important;
         }
         .map-responsive{
             overflow:hidden;
@@ -70,36 +76,36 @@
         <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar">
+        <div class="navbar-collapse collapse justify-content-between align-items-center w-100 bosc" id="collapsingNavbar">
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#home">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#about">Tentang Event</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#venue">Venue</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#sponsors">Sponsors</a>
+                    <a class="nav-link" href="#sponsors">Sponsor</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#faq">FAQs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact">Kontak</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">Masuk</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}">Daftar</a>
                     </li>
                     @endif
                     @else
@@ -132,11 +138,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>About The Event</h2>
+                    <h2 class="bosc">Tentang Event</h2>
                     <p>Untuk mempererat silaturahmi dan sekaligus napak tilas jejak perjalanan APDN Malang sejak Tahun 1956 hingga sekarang, maka akan dilaksanakan serangkaian kegiatan kreatif sebagai bentuk sumbangsih pemikiran bagi profesi kepamongprajaan dan perkembangan ilmu pemerintahan baru menghadapi Era Revolusi Industri 4.0 di semua lini pemerintahan. Kegiatan ini bertema : "<b>Pamong Praja 4.1: Seorang Pemimpin Harus Selangkah Lebih Maju dari Eranya</b>".</p>
                 </div>
                 <div class="col-lg-3">
-                    <h3>Where</h3>
+                    <h3 class="bosc">Di mana?</h3>
                     <p>
                         <b>Seminar Nasional:</b><br/>Ballroom Hayam Wuruk Hotel Aria Gajayana Malang, Jawa Timur<br/>
                         <b>Reuni Akbar APDN:</b><br/>Kampus APDN Malang<br/>
@@ -144,7 +150,7 @@
                     </p>
                 </div>
                 <div class="col-lg-3">
-                    <h3>When</h3>
+                    <h3 class="bosc">Kapan?</h3>
                     <p>
                         <b>Seminar Nasional:</b><br/>Sabtu, 21 Maret 2020, 09.00 WIB - 14.00 WIB<br/>
                         <b>Reuni Akbar APDN:</b><br/>Sabtu, 21 Maret 2020<br/>
@@ -152,6 +158,42 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="rute-perlombaan" class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Rute Perlombaan</h1>
+            <img src="{{ URL::to('/') }}/route.png" class="img-fluid" alt="Responsive image">
+                
+        </div>
+    </section>
+    <section id="racepack" class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Pengambilan Racepack</h1>
+            <img src="{{ URL::to('/') }}/racepack.png" class="img-fluid" alt="Responsive image">
+            <blockquote class="blockquote px-5">
+                <div class="text-left">
+                    <ul>
+                        <li>Finisher medali akan dibagikan kepada peserta di garis finish dengan menunjukkan gelang yang diperoleh di Posko Manggala.</li>
+                        <li>Pengambilan goodiebag seminar nasional dilaksanakan pada hari pelaksanaan disaat melaksanakan registrasi ulang sebelum pelaksanaan seminar dimulai.</li>
+                        <li>Pengambilan perlengkapan peserta fun run dapat dilaksanakan mulai tanggal 20 - 21 Maret 2020 bertempat di Eks. Kampus APDN Malang, Jl. Kawi No. 41 Malang.</li>
+                    </ul>
+                </div>
+            </blockquote>
+        </div>
+    </section>
+    <section id="racepack" class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Syarat Pengambilan Racepack</h1>
+            <blockquote class="blockquote px-5">
+                <div class="text-left">
+                    <ul>
+                        <li>Membawa dan menunjukkan bukti registrasi.</li>
+                        <li>Membawa KTP / Kartu Indentitas asli dan fotokopi</li>
+                        <li>Membawa surat kuasa untuk yang diwakilkan.</li>
+                    </ul>
+                </div>
+            </blockquote>
         </div>
     </section>
     <section id="venue" class="jumbotron text-center">
@@ -167,69 +209,193 @@
         <div class="container">
             <h1 class="jumbotron-heading">Beloved Sponsor</h1>
             <div class="row justify-content-center flex-wrap align-middle">
-                <img src="{{ URL::to('/') }}/sponsor1.png" class="img-sponsors" alt="Responsive image" height="150" width="auto">
-                <img src="{{ URL::to('/') }}/sponsor2.png" class="img-sponsors" alt="Responsive image" height="150" width="auto">
-                <img src="{{ URL::to('/') }}/sponsor3.png" class="img-sponsors" alt="Responsive image" height="200" width="auto">
-                <img src="{{ URL::to('/') }}/sponsor4.png" class="img-sponsors" alt="Responsive image" height="150" width="auto">
-                <img src="{{ URL::to('/') }}/sponsor5.png" class="img-sponsors" alt="Responsive image" height="150" width="auto">
+                <img src="{{ URL::to('/') }}/sponsor1.png" class="img-sponsors" alt="Responsive image" height="80" width="auto">
+                <img src="{{ URL::to('/') }}/sponsor2.png" class="img-sponsors" alt="Responsive image" height="80" width="auto">
+                <img src="{{ URL::to('/') }}/sponsor3.png" class="img-sponsors" alt="Responsive image" height="110" width="auto">
+                <img src="{{ URL::to('/') }}/sponsor4.png" class="img-sponsors" alt="Responsive image" height="80" width="auto">
+                <img src="{{ URL::to('/') }}/sponsor5.png" class="img-sponsors" alt="Responsive image" height="80" width="auto">
             </div>
             <div class="row justify-content-center flex-wrap align-middle">
-                <img src="{{ URL::to('/') }}/sponsor6.png" class="img-sponsors" alt="Responsive image" height="150" width="auto">
+                <img src="{{ URL::to('/') }}/sponsor6.png" class="img-sponsors" alt="Responsive image" height="80" width="auto">
             </div>
         </div>
     </section>
     <section id="faq" class="jumbotron">
         <div class="container">
             <h1 class="jumbotron-heading text-center">FAQs</h1>
-            <div class="pb-4">
-                <div>
-                    <h4>Q: What is Lorem Ipsum?</h4>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five http://jquery2dotnet.com/ centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
+            <blockquote class="blockquote px-5">
+                <div class="pb-4">
+                    <div>
+                        <h4>Q: Kapan kegiatan Pamong Praja 4.1 diselenggarakan?</h4>
+                        <p>
+                            Sabtu – Minggu, 21 – 22 Maret 2020.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Dimana kegiatan Pamong Praja 4.1 diselenggarakan?</h4>
+                        <p>
+                            Di Kota Malang, tepatnya di sekitar Eks. Kampus APDN Malang, Jl. Kawi No. 41 Malang.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Kegiatan Pamong Praja 4.1 terdiri dari apa saja?</h4>
+                        <p>
+                            Pamong Praja 4.1 merupakan serangkaian kegiatan yang terdiri dari:
+                            <ol>
+                                <li>Seminar Nasional</li>
+                                <li>Malam Inaugurasi Pamong Praja</li>
+                                <li>Fun Run</li>
+                            </ol>
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Berapa harga tiket untuk kegiatan Pamong Praja 4.1?</h4>
+                        <p>
+                            Untuk harga satuan:
+                            <ol>
+                                <li>Seminar Nasional Rp. 300.000,-</li>
+                                <li>Malam Inaugurasi Pamong Praja Rp. 150.000,-</li>
+                                <li>Fun Run Rp. 200.000,-</li>
+                            </ol>
+                            Untuk harga paket:
+                            <ol>
+                                <li>Paket Lengkap Rp. 550.000,-</li>
+                                <li>Paket Seminar Nasional dan Malam Inaugurasi Pamong Praja Rp. 400.000,-</li>
+                                <li>Paket Malam Inaugurasi dan Fun Run Rp. 325.000,-</li>
+                                <li>Paket Seminar Nasional dan Fun Run Rp. 450.000,-</li>
+                            </ol>
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Apakah ada harga tiket diskon?</h4>
+                        <p>
+                            Untuk tiket Fun Run berlaku ketentuan, bagi 41 pendaftar pertama Rp. 150.000,-. Bagi 241 pendaftar berikutnya Rp. 175.000,- dan untuk pendaftar selanjutnya harga tiket normal yaitu Rp. 200.000,-.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Seminar Nasional Pamong Praja 4.1 kapan diselenggarakan?</h4>
+                        <p>
+                            Sabtu, 21 Maret 2020
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Jam berapa Seminar Nasional Pamong Praja 4.1 dimulai?</h4>
+                        <p>
+                            Registrasi dimulai pukul 08.00 WIB, Acara mulai pukul 09.00 WIB sampai dengan selesai.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Dimana Seminar Nasional Pamong Praja 4.1 diselenggarakan?</h4>
+                        <p>
+                            Di Ball Room Hayam Wuruk, Hotel Aria Gajayana, Jl. Kawi No. 24, Kauman, Kecamatan Klojen, Kota Malang.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Siapa saja yang menjadi Narasumber dalam Seminar Nasional Pamong Praja 4.1?</h4>
+                        <p>
+                            Ibu Khofifah Indar Parawansa (Gubernur Jawa Timur).<br/>Bpk. Tito Karnavian (Menteri Dalam Negeri RI).<br/>
+                            Bpk. Nadiem Makariem (Menteri Pendidikan dan Kebudayaan RI).<br/>
+                            Bpk. Abdullah Azwar Anas (Bupati Banyuwangi).<br/>
+                            Bpk. Prof. Rhenald Kasali (Akademisi/Motivator).
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Apakah Tema Seminar Nasional Pamong Praja 4.1?</h4>
+                        <p>
+                            Pamong Praja 4.1 : Seorang Pemimpin Harus Selangkah Lebih Maju dari Eranya.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Siapa saja yang diharapkan menjadi peserta dalam Seminar Nasional Pamong Praja 4.1?</h4>
+                        <p>
+                            Seluruh Pejabat Pemerintahan mulai dari Gubernur, Bupati/Walikota, Aparatur Sipil Negara, Akademisi, Mahasiswa, Purna Praja dan Masyarakat Umum.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Apa yang akan kita dapatkan dari Acara Seminar Nasional Pamong Praja 4.1?</h4>
+                        <p>
+                            Peserta mendapat Goodiebag, Seminar Kit, Tumbler, Sertifikat, Coffe Break 1 kali dan Makan Siang.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Kapan Pamong Fun Run diselenggarakan?</h4>
+                        <p>
+                            Minggu, 22 Maret 2020.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Jam berapa lari dimulai?</h4>
+                        <p>
+                            Berkumpul di Simpang Balapan pukul 05.30 WIB dan lari akan dimulai pada pukul 06.00 WIB.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Dimana Pamong Fun Run diselenggarakan?</h4>
+                        <p>
+                            Sekitar Kampus APDN Malang, Jl. Kawi 41 Malang.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Berapa kategori jarak Pamong Fun Run?</h4>
+                        <p>
+                            4.1 K++ (kurang lebih 5 KM).
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Siapa saja yang diharapkan menjadi peserta dalam Pamong Fun Run?</h4>
+                        <p>
+                            Siapa saja boleh bergabung dalam Pamong Fun Run, Anak-anak, Wanita, Pria, baik masyarakat umum ataupun Purna Praja.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Apa yang akan diperoleh peserta?</h4>
+                        <p>
+                            BIB (Nomor dada), jersey/kaos dan finisher medal.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Setelah lari akan ada acara apa?</h4>
+                        <p>
+                            Setelah lari selesai, peserta akan dihibur dengan entertainment, bazaar dan doorprize menarik.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Apakah pengambilan perlengkapan dapat diwakilkan?</h4>
+                        <p>
+                            Pengambilan racepack dapat diwakilkan dengan surat kuasa bermaterai dan fotocopy pemberi kuasa (pemilik tiket asli yang tertera dalam email tanda terima).
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Untuk malam inaugurasi bagaimana?</h4>
+                        <p>
+                            Malam inaugurasi dilaksanakan pada tanggal 21 Maret 2020, di mulai pukul 18.00 WIB.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Q: Apa yang dilaksanakan pada acara malam inaugurasi Pamong Praja?</h4>
+                        <p>
+                            Malam inaugurasi merupakan malam berkumpulnya kembali para Pamong Praja dari para Purna Praja untuk mengenang kembali masa-masa di lembaga pendidikan yang dikemas dengan nuansa santai dan kembali ke tempo dulu.
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <h4>Q: What is Lorem Ipsum?</h4>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five http://jquery2dotnet.com/ centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </div>
-                <div>
-                    <h4>Q: What is Lorem Ipsum?</h4>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five http://jquery2dotnet.com/ centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </div>
-                <div>
-                    <h4>Q: What is Lorem Ipsum?</h4>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five http://jquery2dotnet.com/ centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </div>
-                <div>
-                    <h4>Q: What is Lorem Ipsum?</h4>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five http://jquery2dotnet.com/ centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </div>
-            </div>
+            </blockquote>
         </div>
     </section>
-    <section id="contact" class="jumbotron text-center text-white py-4 bg-dark">
-        <div class="container">
-            <h1 class="jumbotron-heading">Contact Us</h1>
+    <section id="contact" class="text-center text-white py-4 bg-dark">
+        <div class="container bosc">
+            <h1>Narahubung</h1>
             <div class="row">
-                <div class="col-md-4 border-right">
-                    <h4>Address</h4>
-                    <p>A108 Adam Street, NY 535022, USA</p>
+                <div class="col-sm-4">
+                    <h4>Pamong Jaga 1</h4>
+                    <p><a href="https://api.whatsapp.com/send?phone=628113514141" class="text-white">+628113514141</a></p>
                 </div>
-                <div class="col-md-4">
-                    <h4>Phone Number (WA)</h4>
-                    <p><a href="https://api.whatsapp.com/send?phone=6281888888888" class="text-white">John Doe +6281888888888</a></p>
+                <div class="col-sm-4 border-right border-left">
+                    <h4>Pamong Jaga 2</h4>
+                    <p><a href="https://api.whatsapp.com/send?phone=628113524141" class="text-white">+628113524141</a></p>
                 </div>
-                <div class="col-md-4 border-left">
-                    <h4>Email</h4>
-                    <p><a href="mailto:info@example.com" class="text-white">info@example.com</a></p>
+                <div class="col-sm-4">
+                    <h4>Pamong Sponsor</h4>
+                    <p><a href="https://api.whatsapp.com/send?phone=628113544141" class="text-white">+628113544141</a></p>
                 </div>
             </div>
         </div>
