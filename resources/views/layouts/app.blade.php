@@ -20,9 +20,6 @@
         .bosc {
             font-family: 'Bowlby One SC', sans-serif !important;
         }
-        footer {
-            background: #212529;
-        }
     </style>
     @yield('css')
 
@@ -33,64 +30,46 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-dark navbar-expand-md bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand bosc" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse bosc" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        @yield('nav-item')
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Masuk</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Daftar</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+        <div class="container pt-3 bosc">
+            <div class="d-flex align-content-around flex-wrap mb-3" id="navbar">
+                <div class="py-2 pr-2"><h2><a href="{{ url('/') }}" class="text-dark">{{ config('app.name', 'Laravel') }}</a></h2></div>
+                @yield('nav-item')
+                @guest
+                <div class="p-2 ml-auto"><a href="{{ route('login') }}" class="btn btn-warning">Masuk</a></div>
+                @if (Route::has('register'))
+                <div class="py-2 pl-2"><a href="{{ route('register') }}" class="btn btn-warning">Daftar</a></div>
+                @endif
+                @else
+                <div class="py-2 pl-2 ml-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->name }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @if(Auth::user()->role == 'USER')
+                            <a class="dropdown-item" href="{{ route('home') }}">Home</a>
+                            @endif
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                             </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
-                    </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
                 </div>
+                @endguest
             </div>
-        </nav>
-
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
 
-        <footer class="py-4 text-white-50">
+        <footer class="py-4">
             <div class="container text-center">
                 <small>{{ config('app.name', 'Laravel') }} @ {{ date("Y") }}. All Rights Reserved.</small>
                 <br/>
-                <small>Created by <a href="https://github.com/stonear" class="text-white">A. R. Stone</a></small>
+                <small>Created by <a href="https://github.com/stonear">A. R. Stone</a></small>
             </div>
         </footer>
     </div>

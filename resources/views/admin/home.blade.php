@@ -6,8 +6,10 @@
 @endsection
 
 @section('nav-item')
-<li class="nav-item active"><a class="nav-link active" href="{{ route('admin.home') }}">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ route('admin.barcode') }}">Barcode</a></li>
+{{-- <li class="nav-item active"><a class="nav-link active" href="{{ route('admin.home') }}">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ route('admin.barcode') }}">Barcode</a></li> --}}
+<div class="p-2"><a href="{{ route('admin.home') }}" class="btn btn-primary active">Home</a></div>
+<div class="p-2"><a href="{{ route('admin.barcode') }}" class="btn btn-primary">Barcode</a></div>
 @endsection
 
 @section('content')
