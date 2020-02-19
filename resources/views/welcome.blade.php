@@ -149,7 +149,7 @@
             <img src="{{ URL::to('/') }}/19.02.2020/02.png" class="img-fluid" alt="Responsive image">
             <ul>
                 <li>Pengambilan goodiebag seminar nasional dilaksanakan pada hari pelaksanaan disaat melaksanakan registrasi ulang sebelum pelaksanaan seminar dimulai.</li>
-            </ul>>
+            </ul>
             <h1 class="text-center bosc">FAQs</h1>
             <div>
                 <h4>Q: Seminar Nasional Pamong Praja 4.1 kapan diselenggarakan?</h4>
