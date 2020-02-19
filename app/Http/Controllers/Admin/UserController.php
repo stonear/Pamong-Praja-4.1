@@ -49,6 +49,26 @@ class UserController extends Controller
         return back()
         ->with('success','You have successfully verify user.');
     }
+    public function unverify(Request $request, $id)
+    {
+        $user = User::where('id', $id)
+        ->update([
+            'status' => 'registered',
+        ]);
+        
+        return back()
+        ->with('success','You have successfully unverify user.');
+    }
+    public function reject(Request $request, $id)
+    {
+        $user = User::where('id', $id)
+        ->update([
+            'status' => 'rejected',
+        ]);
+        
+        return back()
+        ->with('success','You have successfully reject user.');
+    }
     public function ticket(Request $request, $id)
     {
         header('Content-type: image/jpeg');
@@ -61,6 +81,17 @@ class UserController extends Controller
 
         $text = substr($user->name, 0, 14);
         imagettftext($jpg_image, 50, 0, 75, 300, $black, $font_path, $text);
+
+        $text = $user->event->name;
+        $text2 = 'Ukuran Kaos: ' . $user->t_shirt;
+        $font_size = 10;
+        $dimensions = imagettfbbox($font_size, 0, $font_path, $text);
+        $text_width = abs($dimensions[4] - $dimensions[0]);
+        $dimensions2 = imagettfbbox($font_size, 0, $font_path, $text2);
+        $text_width2 = abs($dimensions2[4] - $dimensions2[0]);
+        $x = imagesx($jpg_image) - max($text_width, $text_width2);
+        imagettftext($jpg_image, $font_size, 0, $x - 40, 30, $black, $font_path, $text);
+        if($user->t_shirt != '-') imagettftext($jpg_image, $font_size, 0, $x - 40, 45, $black, $font_path, $text2);
 
         $barcode_image = DNS1D::getBarcodePNG($user->UID, 'EAN13', 3, 66, array(0, 0, 0), true);
         $barcode_image = base64_decode($barcode_image);

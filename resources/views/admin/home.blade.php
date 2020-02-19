@@ -43,8 +43,12 @@
                                 <td>: {{ $confirmed }}</td>
                             </tr>
                             <tr>
+                                <td>Rejected</td>
+                                <td>: {{ $rejected }}</td>
+                            </tr>
+                            <tr>
                                 <td>Total</td>
-                                <td>: {{ $registered + $unconfirmed + $confirmed }}</td>
+                                <td>: {{ $registered + $unconfirmed + $confirmed + $rejected }}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -41,6 +41,29 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="t_shirt" class="col-md-4 col-form-label text-md-right">Ukuran Baju<br>(Khusus Fun Run)</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="t_shirt" name="t_shirt" required>
+                                    <option value="-">-</option>
+                                    <option value="XS">XS (45 x 65)</option>
+                                    <option value="S">S (48 x 67)</option>
+                                    <option value="M">M (50 x 70)</option>
+                                    <option value="L">L (53 x 72)</option>
+                                    <option value="XL">XL (55 x 75)</option>
+                                    <option value="XXL">XXL (58 x 77)</option>
+                                    <option value="3XL">3XL (60 x 80)</option>
+                                </select>
+
+                                @error('t_shirt')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <hr/>
 
                         <div class="form-group row">

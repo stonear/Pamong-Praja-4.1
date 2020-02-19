@@ -67,6 +67,7 @@ class RegisterController extends Controller
             'phone' => ['required', 'numeric'],
             'community_name' => ['required', 'string'],
             'community_type' => ['required', 'string'],
+            't_shirt' => ['required', 'string'],
         ]);
     }
 
@@ -93,6 +94,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'community_name' => $data['community_name'],
             'community_type' => $data['community_type'],
+            't_shirt' => $data['t_shirt'],
 
             'status' => 'registered',
         ]);

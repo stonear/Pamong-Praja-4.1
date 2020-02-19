@@ -36,6 +36,7 @@ class BarcodeController extends Controller
     		$result .= 'Nama: ' . $user->name . PHP_EOL;
     		$result .= 'Email: ' . $user->email . PHP_EOL;
     		$result .= 'Kategori: ' . $user->event->name . PHP_EOL;
+            $result .= 'Ukuran Kaos: ' . $user->t_shirt . PHP_EOL;
     		$result .= 'Status: ' . $user->status . PHP_EOL;
 
     		return htmlentities($result);

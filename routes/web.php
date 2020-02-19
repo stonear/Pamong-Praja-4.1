@@ -32,6 +32,8 @@ Route::middleware(['is_admin'])->group(function () {
 	Route::get('admin/user/{id}', 'Admin\UserController@show')->name('admin.user.show');
 	Route::get('admin/user/{id}/destroy', 'Admin\UserController@destroy')->name('admin.user.destroy');
 	Route::get('admin/user/{id}/verify', 'Admin\UserController@verify')->name('admin.user.verify');
+	Route::get('admin/user/{id}/reject', 'Admin\UserController@reject')->name('admin.user.reject');
+	Route::get('admin/user/{id}/unverify', 'Admin\UserController@unverify')->name('admin.user.unverify');
 	Route::get('admin/user/{id}/ticket', 'Admin\UserController@ticket')->name('admin.user.ticket');
 	Route::post('admin/user/{id}/password', 'Admin\UserController@password')->name('admin.user.password');
 	Route::get('admin/barcode', 'Admin\BarcodeController@index')->name('admin.barcode');

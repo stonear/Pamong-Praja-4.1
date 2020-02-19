@@ -29,6 +29,7 @@ class HomeController extends Controller
             'registered' => User::where('status', 'registered')->where('role', 'USER')->count(),
             'unconfirmed' => User::where('status', 'unconfirmed')->where('role', 'USER')->count(),
             'confirmed' => User::where('status', 'confirmed')->where('role', 'USER')->count(),
+            'rejected' => User::where('status', 'rejected')->where('role', 'USER')->count(),
         ]);
     }
 }

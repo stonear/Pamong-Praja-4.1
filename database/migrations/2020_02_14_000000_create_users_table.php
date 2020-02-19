@@ -29,11 +29,12 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('community_name')->nullable();
             $table->string('community_type');
+            $table->string('t_shirt')->nullable();
 
             $table->string('payment_proof')->nullable();
             $table->unsignedBigInteger('event_id')->nullable();
 
-            $table->enum('status', ['registered', 'unconfirmed', 'confirmed']);
+            $table->enum('status', ['registered', 'unconfirmed', 'confirmed', 'rejected']);
 
             $table->rememberToken();
             $table->timestamps();

@@ -22,7 +22,7 @@
 			<div class="card">
 				<div class="card-header">Halo, {{ Auth::user()->name }}!</div>
 				<div class="card-body">
-					@if(Auth::user()->status == 'registered')
+					@if(Auth::user()->status == 'registered' or Auth::user()->status == 'rejected')
 					Untuk mendapatkan e-ticket, peserta diharuskan melakukan pembayaran biaya pendaftaran sebesar <b>Rp.{{ number_format(Auth::user()->event->price) }},-</b> ke salah satu rekening berikut.
 					<ul>
 						<li><b>BRI</b> 0873-01-006735-50-9 a.n. NIDAUL HIDAYAH</li>
@@ -69,6 +69,14 @@
 
 						<div class="col-md-6">
 							<input id="event_id" type="text" class="form-control" name="event_id" value="{{ Auth::user()->event->name }}" disabled autofocus>
+						</div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="t_shirt" class="col-md-4 col-form-label text-md-right">Ukuran Baju<br>(Khusus Fun Run)</label>
+
+						<div class="col-md-6">
+							<input id="t_shirt" type="text" class="form-control" name="t_shirt" value="{{ Auth::user()->t_shirt }}" disabled autofocus>
 						</div>
                     </div>
 

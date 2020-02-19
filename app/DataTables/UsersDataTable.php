@@ -27,8 +27,9 @@ class UsersDataTable extends DataTable
         })
         ->editColumn('status', function ($user) {
             if($user->status == 'registered') return '<span class="badge badge-primary">Registered</span>';
-            else if($user->status == 'unconfirmed') return '<span class="badge badge-danger">Unconfirmed</span>';
+            else if($user->status == 'unconfirmed') return '<span class="badge badge-warning">Unconfirmed</span>';
             else if($user->status == 'confirmed') return '<span class="badge badge-success">Confirmed</span>';
+            else if($user->status == 'rejected') return '<span class="badge badge-danger">Rejected</span>';
         })
         ->addColumn('action', function ($user) {
             return view('admin.user.action', compact('user'))->render();
@@ -102,7 +103,8 @@ class UsersDataTable extends DataTable
             Column::make('community_type')
             ->visible(false),
             Column::make('event')
-            ->visible(false),
+            ->visible(false)
+            ->searchable(false),
             Column::make('status'),
             Column::computed('action')
             ->exportable(false)

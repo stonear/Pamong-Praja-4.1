@@ -1,3 +1,7 @@
+@if(empty($user))
+@php die() @endphp
+@endif
+
 @extends('layouts.app')
 
 @section('css')
@@ -31,8 +35,10 @@
 				<div class="card-body">
 					@if($user->status != 'confirmed')
 					<a href="{{ route('admin.user.verify', ['id' => $user->id]) }}" class="btn btn-success btn-block mb-3">Verify</a>
+					<a href="{{ route('admin.user.reject', ['id' => $user->id]) }}" class="btn btn-danger btn-block mb-3">Reject</a>
 					@else
 					<a href="{{ route('admin.user.ticket', ['id' => $user->id]) }}" class="btn btn-success btn-block mb-3">Get Ticket</a>
+					<a href="{{ route('admin.user.unverify', ['id' => $user->id]) }}" class="btn btn-danger btn-block mb-3">Unverify</a>
 					@endif
 					<hr/>
 					<form method="POST" action="{{ route('admin.user.password', ['id' => $user->id]) }}">
@@ -64,6 +70,14 @@
 
 						<div class="col-md-6">
 							<input id="event_id" type="text" class="form-control" name="event_id" value="{{ $user->event->name . ' Rp. ' . number_format($user->event->price) . ',-' }}" disabled autofocus>
+						</div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="t_shirt" class="col-md-4 col-form-label text-md-right">Ukuran Baju<br>(Khusus Fun Run)</label>
+
+						<div class="col-md-6">
+							<input id="t_shirt" type="text" class="form-control" name="t_shirt" value="{{ $user->t_shirt }}" disabled autofocus>
 						</div>
                     </div>
 

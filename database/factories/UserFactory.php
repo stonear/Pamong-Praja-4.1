@@ -34,11 +34,10 @@ $factory->define(User::class, function (Faker $faker) {
         'phone' => $faker->randomNumber(9),
         'community_name' => $faker->company,
         'community_type' => $faker->jobTitle,
+        't_shirt' => $faker->randomElement($array = array ('XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL')),
 
-        'forum' => $faker->randomElement($array = array (true, false)),
-        'reunion' => $faker->randomElement($array = array (true, false)),
-        'run' => $faker->randomElement($array = array (true, false)),
+        'event_id' => $faker->numberBetween(1, 7),
 
-        'status' => $faker->randomElement($array = array ('registered', 'unconfirmed', 'confirmed')),
+        'status' => $faker->randomElement($array = array ('registered', 'unconfirmed', 'confirmed', 'rejected')),
     ];
 });

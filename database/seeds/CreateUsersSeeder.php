@@ -28,6 +28,7 @@ class CreateUsersSeeder extends Seeder
                 'phone' => '0',
                 'community_name' => 'ADMIN',
                 'community_type' => 'ADMIN',
+                't_shirt' => '-',
 
                 'status' => 'confirmed',
     		],
