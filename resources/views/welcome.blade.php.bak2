@@ -15,14 +15,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One+SC" />
     <style>
         .about {
             text-indent: 50px;
-        }
-        .alert {
-            border-radius: 0;
         }
         .bosc {
             font-family: 'Bowlby One SC', sans-serif !important;
@@ -44,35 +40,8 @@
             width:100%;
             position:absolute;
         }
-        .nav-link {
-            color: white;
-        }
-        .nav-link:hover, .nav-link:focus {
-            color: #f3cb17;
-        }
-        .primary_background {
-            background-color: #18499c;
-        }
-        #navbar_mobile {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
-            cursor: pointer;
-            font-size: 3em;
-        }
-        #navbar_mobile .fa {
-            font-size: 4rem;
-        }
         b {
             color: red;
-        }
-        body {
-            padding-top: 3.5rem;
         }
     </style>
 
@@ -82,42 +51,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="navbar_mobile" class="primary_background bosc">
-        <div class="col-sm-12 p-0 d-flex flex-column">
-            <div class="px-0">
-                <nav class="navbar navbar-expand-lg navbar-dark my-3">
-                    <a href="#" class="navbar-brand ml-auto"><i class="fa fa-times" aria-hidden="true" id="fa-times"></i></a>
-                </nav>
-            </div>
-            <ul class="navbar-nav my-auto text-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#seminar">Seminar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mipp">MIPP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#funrun">Fun Run</a>
-                </li>
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Masuk</a>
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Daftar</a>
-                </li>
-                @endif
-                @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+    <div class="container pt-3 bosc">
+        <div class="d-flex align-content-around flex-wrap mb-3" id="navbar">
+            <div class="py-2 pr-2"><a href="#beranda" class="btn btn-primary">Beranda</a></div>
+            <div class="p-2"><a href="#seminar" class="btn btn-primary">Seminar</a></div>
+            <div class="p-2"><a href="#mipp" class="btn btn-primary">MIPP</a></div>
+            <div class="p-2 mr-auto"><a href="#funrun" class="btn btn-primary">Fun Run</a></div>
+            @guest
+            <div class="p-2"><a href="{{ route('login') }}" class="btn btn-warning">Masuk</a></div>
+            @if (Route::has('register'))
+            <div class="py-2 pl-2"><a href="{{ route('register') }}" class="btn btn-warning">Daftar</a></div>
+            @endif
+            @else
+            <div class="py-2 pl-2">
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         @if(Auth::user()->role == 'USER')
                         <a class="dropdown-item" href="{{ route('home') }}">Home</a>
                         @endif
@@ -128,81 +79,26 @@
                             @csrf
                         </form>
                     </div>
-                </li>
-                @endguest
-            </ul>     
+                </div>
+            </div>
+            @endguest
+        </div>
+    </div>
+    <div class="container">
+        <div class="alert alert-danger running_text" role="alert">
+            @php
+            $now = new DateTime();
+            $to = new DateTime("2020-03-21");
+
+            if($now <= $to) $diff = $to->diff($now)->format("%a");
+            else $diff = 0;
+            @endphp
+            <marquee behavior="scroll" direction="left">Counting Down: H – {{ $diff }}</marquee>
         </div>   
     </div>
-    <nav class="navbar navbar-expand-md primary_background justify-content-center fixed-top" id="navbar">
-        <a href="#" class="navbar-brand mr-0">
-            <img src="{{ URL::to('/') }}/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            <!-- {{ config('app.name', 'Laravel') }} -->
-        </a> 
-        <div class="navbar-collapse collapse justify-content-between align-items-center w-100 bosc" id="collapsingNavbar">
-            <ul class="navbar-nav mx-auto text-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#seminar">Seminar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mipp">MIPP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#funrun">Fun Run</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Masuk</a>
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Daftar</a>
-                </li>
-                @endif
-                @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        @if(Auth::user()->role == 'USER')
-                        <a class="dropdown-item" href="{{ route('home') }}">Home</a>
-                        @endif
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                @endguest
-            </ul>
-        </div>
-        <button class="navbar-toggler mr-3 ml-auto text-light" type="button" id="navbar-toggler">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-    </nav>
-    <div class="alert alert-danger mb-0 running_text" role="alert">
-        @php
-        $now = new DateTime();
-        $to = new DateTime("2020-03-21");
-
-        if($now <= $to) $diff = $to->diff($now)->format("%a");
-        else $diff = 0;
-        @endphp
-        <marquee behavior="scroll" direction="left" class=""><h3><b>Counting Down: H – {{ $diff }}</b></h3></marquee>
-    </div>
-    <section id="home">
-        <img src="{{ URL::to('/') }}/20.02.2020/01.png" class="img-fluid" alt="Responsive image" width="100%" height="auto" />
+    <section id="beranda">
         <div class="container">
-            <img src="{{ URL::to('/') }}/19.02.2020/06.png" class="img-fluid" alt="Responsive image">
-            <h1 class="text-center bosc">Tentang Event</h1>
+            <img src="{{ URL::to('/') }}/19.02.2020/01.png" class="img-fluid" alt="Responsive image">
             <p class="text-justify about">
                 Kemajuan zaman yang ditandai dengan hadirnya Revolusi Industri 4.0 menjadi peluang sekaligus ancaman, namun bagi seorang Pamong Praja dituntut untuk selalu dapat mengikuti perkembangan zaman, sehingga penguasaan dan kemampuan dalam kompetensi, kepemimpinan dan integritas adalah sebuah keniscayaan yang WAJIB dimiliki oleh seorang Pamong Praja. Perpaduan, kolaborasi, integrasi dan sinergi Ilmu Pemerintahan Baru atau <b>KYBERNOLOGI</b> dengan Kemampuan dalam penguasaan teknologi informasi digital/cyber atau <b>CYBERTECHNOLOGY</b>, menjadi trend baru dalam praktek kepemimpinan kepemerintahan saat ini, yang diharapkan dapat menghasilkan inovasi-inovasi baru dalam pelayanan publik bagi masyarakat. Purna Praja yang notabene adalah Pamong Praja dituntut untuk selalu selangkah lebih maju dari eranya, yang kemudian kami deklarasikan dengan istilah <b>PAMONG PRAJA 4.1</b>, yang mengandung makna bahwa seorang Pamong Praja saat ini harus memiliki kompetensi, kepemimpinan dan integritas yang selangkah lebih maju dalam bersiap-siap menghadapi era Revolusi Industri 4.0.
             </p>
@@ -216,7 +112,7 @@
     </section>
     <section id="faq">
         <div class="container">
-            <h4 class="text-center bosc">FAQs</h4>
+            <h1 class="text-center bosc">FAQs</h1>
             <div>
                 <h4>Q: Kapan kegiatan Pamong Praja 4.1 diselenggarakan?</h4>
                 <p>
@@ -250,12 +146,11 @@
     </section>
     <section id="seminar">
         <div class="container">
-            <img src="{{ URL::to('/') }}/20.02.2020/02.png" class="img-fluid" alt="Responsive image">
-            <h2 class="text-center bosc">Pengambilan Goodiebag</h2>
+            <img src="{{ URL::to('/') }}/19.02.2020/02.png" class="img-fluid" alt="Responsive image">
             <ul>
                 <li>Pengambilan goodiebag seminar nasional dilaksanakan pada hari pelaksanaan disaat melaksanakan registrasi ulang sebelum pelaksanaan seminar dimulai.</li>
             </ul>
-            <h4 class="text-center bosc">FAQs</h4>
+            <h1 class="text-center bosc">FAQs</h1>
             <div>
                 <h4>Q: Seminar Nasional Pamong Praja 4.1 kapan diselenggarakan?</h4>
                 <p>
@@ -306,8 +201,8 @@
     </section>
     <section id="mipp">
         <div class="container">
-            <img src="{{ URL::to('/') }}/20.02.2020/03.png" class="img-fluid" alt="Responsive image">
-            <h4 class="text-center bosc">FAQs</h4>
+            <img src="{{ URL::to('/') }}/19.02.2020/03.png" class="img-fluid" alt="Responsive image">
+            <h1 class="text-center bosc">FAQs</h1>
             <div>
                 <h4>Q: Untuk malam inaugurasi bagaimana?</h4>
                 <p>
@@ -324,11 +219,7 @@
     </section>
     <section id="funrun">
         <div class="container">
-            <img src="{{ URL::to('/') }}/20.02.2020/04.png" class="img-fluid" alt="Responsive image">
-            <h2 class="text-center bosc">Rute Perlombaan</h2>
-            <img src="{{ URL::to('/') }}/route.png" class="img-fluid mb-5" alt="Responsive image">
-            <h2 class="text-center bosc">Pengambilan Racepack</h2>
-            <center><img src="{{ URL::to('/') }}/racepack.png" class="img-fluid" alt="Responsive image"></center>
+            <img src="{{ URL::to('/') }}/19.02.2020/04.png" class="img-fluid" alt="Responsive image">
             <ul>
                 <li>Finisher medali akan dibagikan kepada peserta di garis finish dengan menunjukkan gelang yang diperoleh di Posko Manggala.</li>
                 <li>Pengambilan goodiebag seminar nasional dilaksanakan pada hari pelaksanaan disaat melaksanakan registrasi ulang sebelum pelaksanaan seminar dimulai.</li>
@@ -341,7 +232,7 @@
                 <li>Membawa surat kuasa untuk yang diwakilkan.</li>
             </ul>
             Untuk surat kuasa dapat diunduh <a href="#">di sini.</a>
-            <h4 class="text-center bosc">FAQs</h4>
+            <h1 class="text-center bosc">FAQs</h1>
             <div>
                 <h4>Q: Kapan Pamong Fun Run diselenggarakan?</h4>
                 <p>
@@ -395,7 +286,7 @@
     <section id="idk">
         <div class="container">
             <img src="{{ URL::to('/') }}/19.02.2020/05.png" class="img-fluid pb-3" alt="Responsive image">
-            <h4 class="text-center bosc">FAQs</h4>
+            <h1 class="text-center bosc">FAQs</h1>
             <div>
                 <h4>Q: Berapa harga tiket untuk kegiatan Pamong Praja 4.1?</h4>
                 <p>
@@ -421,9 +312,10 @@
                 </p>
             </div>
             <h1 class="text-center bosc">Lokasi</h1>
-            <div class="map-responsive mb-3">
+            <div class="map-responsive">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.2080751162466!2d112.62179691475924!3d-7.9774336817424665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd628212a62142d%3A0x8a9a708ff2fc1407!2sHotel%20Aria%20Gajayana%20-%20Malang!5e0!3m2!1sen!2sid!4v1580697073534!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
+            <img src="{{ URL::to('/') }}/19.02.2020/06.png" class="img-fluid" alt="Responsive image">
             <h1 class="text-center bosc">Narahubung</h1>
             <div class="row text-center">
                 <div class="col-sm">
@@ -449,33 +341,21 @@
         </div>
     </footer>
     <script>
-        function show() {
-            $("#navbar_mobile").show();
-            $("#navbar").hide();
-        }
-        function hide() {
-            $("#navbar_mobile").hide();
-            $("#navbar").show();
-        }
         $(document).ready(function(){
-            hide();
-            $("body").scrollspy({target: ".navbar", offset: 50});   
-            $("#navbar a, #navbar_mobile a").on('click', function(event) {
-                hide();
+            $('body').scrollspy({target: ".navbar", offset: 50});   
+            $("#navbar a").on('click', function(event) {
                 if (this.hash !== "") {
                     event.preventDefault();
 
                     var hash = this.hash;
 
-                    $("html, body").animate({
+                    $('html, body').animate({
                         scrollTop: $(hash).offset().top
                     }, 800, function(){
                         window.location.hash = hash;
                     });
-                }
+                }f
             });
-            $("#navbar-toggler").on('click', show);
-            $("#fa-times").on('click', hide);
         });
     </script>
 </body>

@@ -46,6 +46,8 @@
 					Setelah dilakukan verifikasi oleh administrator, anda akan mendapatkan e-ticket untuk ditunjukkan pada saat acara.
 					@elseif(Auth::user()->status == 'unconfirmed')
 					Bukti pembayaran anda sedang diverifikasi oleh administrator. Apabila dalam 24 jam belum terverifikasi, mohon hubungi PIC: Pamong Jaga 1 (+628113514141), Pamong Jaga 2 (+628113524141).
+					<br/>
+					<b>Tiket dapat diunduh setelah pembayaran diverifikasi oleh administrator.</b>
 					<hr/>
 					<figure class="figure text-center">
 						<img src="{{ URL::to('/') }}/images/{{ Auth::user()->payment_proof }}" class="figure-img img-fluid rounded" alt="payment_proof">

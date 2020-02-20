@@ -4,14 +4,20 @@
 
 # Revisi 1
 
-Tambah FAQs
+* Tambah FAQs
 
 # Revisi 2
 
-Ubah tampilan sesuai [rev2.pdf](docs/rev2.pdf)
+* Ubah tampilan sesuai [rev2.pdf](docs/rev2.pdf)
 
 <p align="center"><img src="docs/2.png" width="500"></p>
 
-Ubah desain tiket
+* Ubah desain tiket
 
 <p align="center"><img src="docs/ticket.jpg" width="500"></p>
+
+# Revisi 3
+
+* Ubah tampilan (iya, lagi)
+
+<p align="center"><img src="docs/3.png" width="500"></p>
