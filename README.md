@@ -21,3 +21,7 @@
 * Ubah tampilan (iya, lagi)
 
 <p align="center"><img src="docs/3.png" width="500"></p>
+
+# Revisi 4
+
+* Tambah [surat kuasa](public/21.02.2020/surat_kuasa.pdf)

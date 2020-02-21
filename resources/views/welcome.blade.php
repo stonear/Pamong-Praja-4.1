@@ -69,10 +69,20 @@
             font-size: 4rem;
         }
         b {
-            color: red;
+            color: #e31e26;
         }
         body {
             padding-top: 3.5rem;
+        }
+        h1 {
+            color: #e31e26;
+            font-size: 3rem;
+            margin-top: 6rem;
+        }
+        @media only screen and (min-width: 768px) {
+            h1 {
+                font-size: 4.5rem;
+            }
         }
     </style>
 
@@ -201,8 +211,10 @@
     <section id="home">
         <img src="{{ URL::to('/') }}/20.02.2020/01.png" class="img-fluid" alt="Responsive image" width="100%" height="auto" />
         <div class="container">
-            <img src="{{ URL::to('/') }}/19.02.2020/06.png" class="img-fluid" alt="Responsive image">
-            <h1 class="text-center bosc">Tentang Event</h1>
+            <div class="text-center">
+                <img src="{{ URL::to('/') }}/20.02.2020/06.png" class="img-fluid" alt="Responsive image" />
+            </div>
+            <h3 class="text-center bosc">Tentang Event</h3>
             <p class="text-justify about">
                 Kemajuan zaman yang ditandai dengan hadirnya Revolusi Industri 4.0 menjadi peluang sekaligus ancaman, namun bagi seorang Pamong Praja dituntut untuk selalu dapat mengikuti perkembangan zaman, sehingga penguasaan dan kemampuan dalam kompetensi, kepemimpinan dan integritas adalah sebuah keniscayaan yang WAJIB dimiliki oleh seorang Pamong Praja. Perpaduan, kolaborasi, integrasi dan sinergi Ilmu Pemerintahan Baru atau <b>KYBERNOLOGI</b> dengan Kemampuan dalam penguasaan teknologi informasi digital/cyber atau <b>CYBERTECHNOLOGY</b>, menjadi trend baru dalam praktek kepemimpinan kepemerintahan saat ini, yang diharapkan dapat menghasilkan inovasi-inovasi baru dalam pelayanan publik bagi masyarakat. Purna Praja yang notabene adalah Pamong Praja dituntut untuk selalu selangkah lebih maju dari eranya, yang kemudian kami deklarasikan dengan istilah <b>PAMONG PRAJA 4.1</b>, yang mengandung makna bahwa seorang Pamong Praja saat ini harus memiliki kompetensi, kepemimpinan dan integritas yang selangkah lebih maju dalam bersiap-siap menghadapi era Revolusi Industri 4.0.
             </p>
@@ -218,19 +230,19 @@
         <div class="container">
             <h4 class="text-center bosc">FAQs</h4>
             <div>
-                <h4>Q: Kapan kegiatan Pamong Praja 4.1 diselenggarakan?</h4>
+                <b>Q: Kapan kegiatan Pamong Praja 4.1 diselenggarakan?</b>
                 <p>
                     Sabtu – Minggu, 21 – 22 Maret 2020.
                 </p>
             </div>
             <div>
-                <h4>Q: Dimana kegiatan Pamong Praja 4.1 diselenggarakan?</h4>
+                <b>Q: Dimana kegiatan Pamong Praja 4.1 diselenggarakan?</b>
                 <p>
                     Di Kota Malang, tepatnya di sekitar Eks. Kampus APDN Malang, Jl. Kawi No. 41 Malang.
                 </p>
             </div>
             <div>
-                <h4>Q: Kegiatan Pamong Praja 4.1 terdiri dari apa saja?</h4>
+                <b>Q: Kegiatan Pamong Praja 4.1 terdiri dari apa saja?</b>
                 <p>
                     Pamong Praja 4.1 merupakan serangkaian kegiatan yang terdiri dari:
                     <ol>
@@ -241,7 +253,7 @@
                 </p>
             </div>
             <div>
-                <h4>Q: Surat Undangan bisa diunduh dimana?</h4>
+                <b>Q: Surat Undangan bisa diunduh dimana?</b>
                 <p>
                     Surat Undangan bisa diunduh <a href="#">di sini.</a>
                 </p>
@@ -250,32 +262,33 @@
     </section>
     <section id="seminar">
         <div class="container">
+            <h1 class="text-center bosc">Seminar Nasional</h1>
             <img src="{{ URL::to('/') }}/20.02.2020/02.png" class="img-fluid" alt="Responsive image">
-            <h2 class="text-center bosc">Pengambilan Goodiebag</h2>
+            <h4 class="text-center bosc">Pengambilan Goodiebag</h4>
             <ul>
                 <li>Pengambilan goodiebag seminar nasional dilaksanakan pada hari pelaksanaan disaat melaksanakan registrasi ulang sebelum pelaksanaan seminar dimulai.</li>
             </ul>
             <h4 class="text-center bosc">FAQs</h4>
             <div>
-                <h4>Q: Seminar Nasional Pamong Praja 4.1 kapan diselenggarakan?</h4>
+                <b>Q: Seminar Nasional Pamong Praja 4.1 kapan diselenggarakan?</b>
                 <p>
                     Sabtu, 21 Maret 2020
                 </p>
             </div>
             <div>
-                <h4>Q: Jam berapa Seminar Nasional Pamong Praja 4.1 dimulai?</h4>
+                <b>Q: Jam berapa Seminar Nasional Pamong Praja 4.1 dimulai?</b>
                 <p>
                     Registrasi dimulai pukul 08.00 WIB, Acara mulai pukul 09.00 WIB sampai dengan selesai.
                 </p>
             </div>
             <div>
-                <h4>Q: Dimana Seminar Nasional Pamong Praja 4.1 diselenggarakan?</h4>
+                <b>Q: Dimana Seminar Nasional Pamong Praja 4.1 diselenggarakan?</b>
                 <p>
                     Di Ball Room Hayam Wuruk, Hotel Aria Gajayana, Jl. Kawi No. 24, Kauman, Kecamatan Klojen, Kota Malang.
                 </p>
             </div>
             <div>
-                <h4>Q: Siapa saja yang menjadi Narasumber dalam Seminar Nasional Pamong Praja 4.1?</h4>
+                <b>Q: Siapa saja yang menjadi Narasumber dalam Seminar Nasional Pamong Praja 4.1?</b>
                 <p>
                     Ibu Khofifah Indar Parawansa (Gubernur Jawa Timur).<br/>
                     Bpk. Tito Karnavian (Menteri Dalam Negeri RI).<br/>
@@ -285,19 +298,19 @@
                 </p>
             </div>
             <div>
-                <h4>Q: Apakah Tema Seminar Nasional Pamong Praja 4.1?</h4>
+                <b>Q: Apakah Tema Seminar Nasional Pamong Praja 4.1?</b>
                 <p>
                     Pamong Praja 4.1 : Seorang Pemimpin Harus Selangkah Lebih Maju dari Eranya.
                 </p>
             </div>
             <div>
-                <h4>Q: Siapa saja yang diharapkan menjadi peserta dalam Seminar Nasional Pamong Praja 4.1?</h4>
+                <b>Q: Siapa saja yang diharapkan menjadi peserta dalam Seminar Nasional Pamong Praja 4.1?</b>
                 <p>
                     Seluruh Pejabat Pemerintahan mulai dari Gubernur, Bupati/Walikota, Aparatur Sipil Negara, Akademisi, Mahasiswa, Purna Praja dan Masyarakat Umum.
                 </p>
             </div>
             <div>
-                <h4>Q: Apa yang akan kita dapatkan dari Acara Seminar Nasional Pamong Praja 4.1?</h4>
+                <b>Q: Apa yang akan kita dapatkan dari Acara Seminar Nasional Pamong Praja 4.1?</b>
                 <p>
                     Peserta mendapat Goodiebag, Seminar Kit, Tumbler, Sertifikat, Coffe Break 1 kali dan Makan Siang.
                 </p>
@@ -306,16 +319,17 @@
     </section>
     <section id="mipp">
         <div class="container">
+            <h1 class="text-center bosc">Malam Inaugurasi Pamong Praja 4.1</h1>
             <img src="{{ URL::to('/') }}/20.02.2020/03.png" class="img-fluid" alt="Responsive image">
             <h4 class="text-center bosc">FAQs</h4>
             <div>
-                <h4>Q: Untuk malam inaugurasi bagaimana?</h4>
+                <b>Q: Untuk malam inaugurasi bagaimana?</b>
                 <p>
                     Malam inaugurasi dilaksanakan pada tanggal 21 Maret 2020, di mulai pukul 18.00 WIB.
                 </p>
             </div>
             <div>
-                <h4>Q: Apa yang dilaksanakan pada acara malam inaugurasi Pamong Praja?</h4>
+                <b>Q: Apa yang dilaksanakan pada acara malam inaugurasi Pamong Praja?</b>
                 <p>
                     Malam inaugurasi merupakan malam berkumpulnya kembali para Pamong Praja dari para Purna Praja untuk mengenang kembali masa-masa di lembaga pendidikan yang dikemas dengan nuansa santai dan kembali ke tempo dulu.
                 </p>
@@ -324,10 +338,11 @@
     </section>
     <section id="funrun">
         <div class="container">
+            <h1 class="text-center bosc">Pamong Fun Run</h1>
             <img src="{{ URL::to('/') }}/20.02.2020/04.png" class="img-fluid" alt="Responsive image">
-            <h2 class="text-center bosc">Rute Perlombaan</h2>
+            <h4 class="text-center bosc">Rute Perlombaan</h4>
             <img src="{{ URL::to('/') }}/route.png" class="img-fluid mb-5" alt="Responsive image">
-            <h2 class="text-center bosc">Pengambilan Racepack</h2>
+            <h4 class="text-center bosc">Pengambilan Racepack</h4>
             <center><img src="{{ URL::to('/') }}/racepack.png" class="img-fluid" alt="Responsive image"></center>
             <ul>
                 <li>Finisher medali akan dibagikan kepada peserta di garis finish dengan menunjukkan gelang yang diperoleh di Posko Manggala.</li>
@@ -340,52 +355,52 @@
                 <li>Membawa KTP / Kartu Indentitas asli dan fotokopi</li>
                 <li>Membawa surat kuasa untuk yang diwakilkan.</li>
             </ul>
-            Untuk surat kuasa dapat diunduh <a href="#">di sini.</a>
+            Untuk surat kuasa dapat diunduh <a href="{{ URL::to('/') }}/21.02.2020/surat_kuasa.pdf">di sini.</a>
             <h4 class="text-center bosc">FAQs</h4>
             <div>
-                <h4>Q: Kapan Pamong Fun Run diselenggarakan?</h4>
+                <b>Q: Kapan Pamong Fun Run diselenggarakan?</b>
                 <p>
                     Minggu, 22 Maret 2020.
                 </p>
             </div>
             <div>
-                <h4>Q: Jam berapa lari dimulai?</h4>
+                <b>Q: Jam berapa lari dimulai?</b>
                 <p>
                     Berkumpul di Simpang Balapan pukul 05.30 WIB dan lari akan dimulai pada pukul 06.00 WIB.
                 </p>
             </div>
             <div>
-                <h4>Q: Dimana Pamong Fun Run diselenggarakan?</h4>
+                <b>Q: Dimana Pamong Fun Run diselenggarakan?</b>
                 <p>
                     Sekitar Kampus APDN Malang, Jl. Kawi 41 Malang.
                 </p>
             </div>
             <div>
-                <h4>Q: Berapa kategori jarak Pamong Fun Run?</h4>
+                <b>Q: Berapa kategori jarak Pamong Fun Run?</b>
                 <p>
                     4.1 K++ (kurang lebih 5 KM).
                 </p>
             </div>
             <div>
-                <h4>Q: Siapa saja yang diharapkan menjadi peserta dalam Pamong Fun Run?</h4>
+                <b>Q: Siapa saja yang diharapkan menjadi peserta dalam Pamong Fun Run?</b>
                 <p>
                     Siapa saja boleh bergabung dalam Pamong Fun Run, Anak-anak, Wanita, Pria, baik masyarakat umum ataupun Purna Praja.
                 </p>
             </div>
             <div>
-                <h4>Q: Apa yang akan diperoleh peserta?</h4>
+                <b>Q: Apa yang akan diperoleh peserta?</b>
                 <p>
                     BIB (Nomor dada), jersey/kaos dan finisher medal.
                 </p>
             </div>
             <div>
-                <h4>Q: Setelah lari akan ada acara apa?</h4>
+                <b>Q: Setelah lari akan ada acara apa?</b>
                 <p>
                     Setelah lari selesai, peserta akan dihibur dengan entertainment, bazaar dan doorprize menarik.
                 </p>
             </div>
             <div>
-                <h4>Q: Apakah pengambilan perlengkapan dapat diwakilkan?</h4>
+                <b>Q: Apakah pengambilan perlengkapan dapat diwakilkan?</b>
                 <p>
                     Pengambilan racepack dapat diwakilkan dengan surat kuasa bermaterai dan fotocopy pemberi kuasa (pemilik tiket asli yang tertera dalam email tanda terima).
                 </p>
@@ -397,7 +412,7 @@
             <img src="{{ URL::to('/') }}/19.02.2020/05.png" class="img-fluid pb-3" alt="Responsive image">
             <h4 class="text-center bosc">FAQs</h4>
             <div>
-                <h4>Q: Berapa harga tiket untuk kegiatan Pamong Praja 4.1?</h4>
+                <b>Q: Berapa harga tiket untuk kegiatan Pamong Praja 4.1?</b>
                 <p>
                     Untuk harga satuan:
                     <ol>
@@ -414,29 +429,29 @@
                     </ol>
                 </p>
             </div>
-            <div>
-                <h4>Q: Apakah ada harga tiket diskon?</h4>
+{{--             <div>
+                <b>Q: Apakah ada harga tiket diskon?</b>
                 <p>
                     Untuk tiket Fun Run berlaku ketentuan, bagi 41 pendaftar pertama Rp. 150.000,-. Bagi 241 pendaftar berikutnya Rp. 175.000,- dan untuk pendaftar selanjutnya harga tiket normal yaitu Rp. 200.000,-.
                 </p>
-            </div>
-            <h1 class="text-center bosc">Lokasi</h1>
+            </div> --}}
+            <h3 class="text-center bosc">Lokasi</h3>
             <div class="map-responsive mb-3">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.2080751162466!2d112.62179691475924!3d-7.9774336817424665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd628212a62142d%3A0x8a9a708ff2fc1407!2sHotel%20Aria%20Gajayana%20-%20Malang!5e0!3m2!1sen!2sid!4v1580697073534!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
-            <h1 class="text-center bosc">Narahubung</h1>
+            <h3 class="text-center bosc">Narahubung</h3>
             <div class="row text-center">
                 <div class="col-sm">
-                    <h4>Pamong Jaga 1</h4>
-                    <p><a href="https://api.whatsapp.com/send?phone=628113514141">+628113514141</a></p>
+                    <b class="text-dark">Pamong Jaga 1</b>
+                    <p><a href="https://api.whatsapp.com/send?phone=628113514141" class="text-dark">+628113514141</a></p>
                 </div>
                 <div class="col-sm">
-                    <h4>Pamong Jaga 2</h4>
-                    <p><a href="https://api.whatsapp.com/send?phone=628113524141">+628113524141</a></p>
+                    <b class="text-dark">Pamong Jaga 2</b>
+                    <p><a href="https://api.whatsapp.com/send?phone=628113524141" class="text-dark">+628113524141</a></p>
                 </div>
                 <div class="col-sm">
-                    <h4>Pamong Sponsor</h4>
-                    <p><a href="https://api.whatsapp.com/send?phone=628113544141">+628113544141</a></p>
+                    <b class="text-dark">Pamong Sponsor</b>
+                    <p><a href="https://api.whatsapp.com/send?phone=628113544141" class="text-dark">+628113544141</a></p>
                 </div>
             </div>
         </div>
@@ -459,7 +474,9 @@
         }
         $(document).ready(function(){
             hide();
-            $("body").scrollspy({target: ".navbar", offset: 50});   
+            var navHeight = $("nav#navbar").height();
+
+            // $("body").scrollspy({target: ".navbar", offset: 50});   
             $("#navbar a, #navbar_mobile a").on('click', function(event) {
                 hide();
                 if (this.hash !== "") {
@@ -468,10 +485,8 @@
                     var hash = this.hash;
 
                     $("html, body").animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function(){
-                        window.location.hash = hash;
-                    });
+                        scrollTop: $(hash).offset().top - navHeight - 20
+                    }, 800);
                 }
             });
             $("#navbar-toggler").on('click', show);
