@@ -20,7 +20,10 @@ class UsersDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables()
-        ->eloquent($query->where('role', 'USER'))
+        ->eloquent(
+            $query->where('role', 'USER')
+            ->where('status', '!=' , 'registered')
+        )
         ->addIndexColumn()
         ->editColumn('event', function ($user) {
             return $user->event->name;

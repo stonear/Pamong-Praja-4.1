@@ -30,10 +30,10 @@
                 <div class="card-body">
                     <table class="table mb-0">
                         <tbody>
-                            <tr>
+                            {{-- <tr>
                                 <td>Registered</td>
                                 <td>: {{ $registered }}</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>Unconfirmed</td>
                                 <td>: {{ $unconfirmed }}</td>
@@ -46,9 +46,13 @@
                                 <td>Rejected</td>
                                 <td>: {{ $rejected }}</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>Total</td>
                                 <td>: {{ $registered + $unconfirmed + $confirmed + $rejected }}</td>
+                            </tr> --}}
+                            <tr>
+                                <td>Total</td>
+                                <td>: {{ $unconfirmed + $confirmed + $rejected }}</td>
                             </tr>
                         </tbody>
                     </table>
