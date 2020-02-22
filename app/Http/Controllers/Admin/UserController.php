@@ -53,7 +53,7 @@ class UserController extends Controller
     {
         $user = User::where('id', $id)
         ->update([
-            'status' => 'registered',
+            'status' => 'unconfirmed',
         ]);
         
         return back()
