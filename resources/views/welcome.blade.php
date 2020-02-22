@@ -339,14 +339,13 @@
     <section id="funrun">
         <div class="container">
             <h1 class="text-center bosc">Pamong Fun Run</h1>
-            <img src="{{ URL::to('/') }}/20.02.2020/04.png" class="img-fluid" alt="Responsive image">
+            <img src="{{ URL::to('/') }}/22.02.2020/04.png" class="img-fluid" alt="Responsive image">
             <h4 class="text-center bosc">Rute Perlombaan</h4>
             <img src="{{ URL::to('/') }}/route.png" class="img-fluid mb-5" alt="Responsive image">
             <h4 class="text-center bosc">Pengambilan Racepack</h4>
             <center><img src="{{ URL::to('/') }}/racepack.png" class="img-fluid" alt="Responsive image"></center>
             <ul>
                 <li>Finisher medali akan dibagikan kepada peserta di garis finish dengan menunjukkan gelang yang diperoleh di Posko Manggala.</li>
-                <li>Pengambilan goodiebag seminar nasional dilaksanakan pada hari pelaksanaan disaat melaksanakan registrasi ulang sebelum pelaksanaan seminar dimulai.</li>
                 <li>Pengambilan perlengkapan peserta fun run dapat dilaksanakan mulai tanggal 20 - 21 Maret 2020 bertempat di Eks. Kampus APDN Malang, Jl. Kawi No. 41 Malang.</li>
             </ul>
             <h4>Syarat Pengambilan Racepack</h4>
@@ -436,8 +435,12 @@
                 </p>
             </div> --}}
             <h3 class="text-center bosc">Lokasi</h3>
-            <div class="map-responsive mb-3">
+            <div class="map-responsive mb-5">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.2080751162466!2d112.62179691475924!3d-7.9774336817424665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd628212a62142d%3A0x8a9a708ff2fc1407!2sHotel%20Aria%20Gajayana%20-%20Malang!5e0!3m2!1sen!2sid!4v1580697073534!5m2!1sen!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <h3 class="text-center bosc">Tata Cara Pendaftaran</h3>
+            <div class="map-responsive mb-5">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/R77DpAP98PU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <h3 class="text-center bosc">Narahubung</h3>
             <div class="row text-center">
