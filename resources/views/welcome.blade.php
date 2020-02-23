@@ -440,7 +440,7 @@
             </div>
             <h3 class="text-center bosc">Tata Cara Pendaftaran</h3>
             <div class="map-responsive mb-5">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/R77DpAP98PU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/R77DpAP98PU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <h3 class="text-center bosc">Narahubung</h3>
             <div class="row text-center">
