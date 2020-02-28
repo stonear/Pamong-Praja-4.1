@@ -255,7 +255,7 @@
             <div>
                 <b>Q: Surat Undangan bisa diunduh dimana?</b>
                 <p>
-                    Surat Undangan bisa diunduh <a href="#">di sini.</a>
+                    Surat Undangan bisa diunduh <a href="{{ URL::to('/') }}/29.02.2020/surat_undangan.pdf">di sini.</a>
                 </p>
             </div>
         </div>
