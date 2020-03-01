@@ -25,3 +25,7 @@
 # Revisi 4
 
 * Tambah [surat kuasa](public/21.02.2020/surat_kuasa.pdf)
+
+# Revisi 5
+
+* Kirim tiket via Email
