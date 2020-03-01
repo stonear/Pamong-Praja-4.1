@@ -81,7 +81,7 @@
                     @endif
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                        <a class="nav-link" href="#" style="color: yellow;">{{ Auth::user()->name }}</a>
                     </li>
                     @if(Auth::user()->role == 'USER')
                     <li class="nav-item">
