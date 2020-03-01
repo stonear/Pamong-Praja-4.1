@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Mail\Ticket;
 use Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Milon\Barcode\DNS1D;
 
 class UserController extends Controller
@@ -41,11 +43,14 @@ class UserController extends Controller
     }
     public function verify(Request $request, $id)
     {
-        $user = User::where('id', $id)
-        ->update([
+        $user = User::find($id);
+        $user->update([
             'status' => 'confirmed',
         ]);
-        
+
+        $ticket = $this->ticketRAW($user);
+        Mail::to($user->email)->send(new Ticket($user, $ticket));
+
         return back()
         ->with('success','You have successfully verify user.');
     }
@@ -74,7 +79,24 @@ class UserController extends Controller
         header('Content-type: image/jpeg');
 
         $user = User::find($id);
+        echo $this->ticketRAW($user);
+    }
+    public function password(Request $request, $id)
+    {
+        $this->validate($request, [
+            'password' => 'required|string|min:8',
+        ]);
 
+        $user = User::where('id', $id)
+        ->update([
+            'password' => Hash::make($request->password),
+        ]);
+        
+        return redirect()->route('admin.user.show', ['id' => $id])
+        ->with('success','You have successfully update password.');
+    }
+    public function ticketRAW(User $user)
+    {
         $jpg_image = imagecreatefrompng(realpath('ticket.png'));
         $black = imagecolorallocate($jpg_image, 0, 0, 0);
         $font_path = realpath('BowlbyOneSC-Regular.ttf');
@@ -98,23 +120,12 @@ class UserController extends Controller
         $barcode_image = imagecreatefromstring($barcode_image);
         imagecopymerge($jpg_image, $barcode_image, 75, 315, 0, 0, 500, 500, 100);
 
+        ob_start();
         imagejpeg($jpg_image);
+        $contents = ob_get_contents();
+        ob_end_clean();
         imagedestroy($jpg_image);
 
-        exit;
-    }
-    public function password(Request $request, $id)
-    {
-        $this->validate($request, [
-            'password' => 'required|string|min:8',
-        ]);
-
-        $user = User::where('id', $id)
-        ->update([
-            'password' => Hash::make($request->password),
-        ]);
-        
-        return redirect()->route('admin.user.show', ['id' => $id])
-        ->with('success','You have successfully update password.');
+        return $contents;
     }
 }
