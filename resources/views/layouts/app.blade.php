@@ -85,7 +85,11 @@
                     </li>
                     @if(Auth::user()->role == 'USER')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link" href="{{ route('user.home') }}">Home</a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
                     </li>
                     @endif
                     <li class="nav-item">
@@ -127,7 +131,9 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @if(Auth::user()->role == 'USER')
-                            <a class="dropdown-item" href="{{ route('home') }}">Home</a>
+                            <a class="dropdown-item" href="{{ route('user.home') }}">Home</a>
+                            @else
+                            <a class="dropdown-item" href="{{ route('admin.home') }}">Home</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
