@@ -38,4 +38,6 @@ Route::middleware(['is_admin'])->group(function () {
 	Route::post('admin/user/{id}/password', 'Admin\UserController@password')->name('admin.user.password');
 	Route::get('admin/barcode', 'Admin\BarcodeController@index')->name('admin.barcode');
 	Route::get('admin/barcode/{UID?}', 'Admin\BarcodeController@search')->name('admin.barcode.search');
+	Route::get('admin/setting', 'Admin\SettingController@index')->name('admin.setting');
+	Route::post('admin/setting', 'Admin\SettingController@store')->name('admin.setting.store');
 });

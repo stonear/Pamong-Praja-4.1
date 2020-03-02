@@ -6,6 +6,7 @@
 @section('nav-item')
 <li class="nav-item"><a class="nav-link" href="{{ route('admin.home') }}">Home</a></li>
 <li class="nav-item active"><a class="nav-link active" href="{{ route('admin.barcode') }}">Barcode</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ route('admin.setting') }}">Setting</a></li>
 @endsection
 
 @section('content')

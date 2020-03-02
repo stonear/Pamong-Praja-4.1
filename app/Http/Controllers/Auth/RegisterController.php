@@ -103,7 +103,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $countries = Country::orderBy('name', 'asc')->get();
-        $events = Event::all();
+        $events = Event::where('active', true)->get();
 
         return view('auth.register', [
             'countries' => $countries,

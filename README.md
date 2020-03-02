@@ -29,3 +29,7 @@
 # Revisi 5
 
 * Kirim tiket via Email
+
+# Revisi 6
+
+* Tambah setting untuk matikan pilihan event registrasi

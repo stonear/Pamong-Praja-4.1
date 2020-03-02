@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('price');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
