@@ -30,6 +30,7 @@ Route::middleware(['is_user'])->group(function () {
 Route::middleware(['is_admin'])->group(function () { 
 	Route::get('admin/home', 'Admin\HomeController@index')->name('admin.home');
 	Route::get('admin/user/{id}', 'Admin\UserController@show')->name('admin.user.show');
+	Route::post('admin/user/{id}', 'Admin\UserController@store')->name('admin.user.store');
 	Route::get('admin/user/{id}/destroy', 'Admin\UserController@destroy')->name('admin.user.destroy');
 	Route::get('admin/user/{id}/verify', 'Admin\UserController@verify')->name('admin.user.verify');
 	Route::get('admin/user/{id}/reject', 'Admin\UserController@reject')->name('admin.user.reject');

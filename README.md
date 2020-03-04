@@ -29,7 +29,12 @@
 # Revisi 5
 
 * Kirim tiket via Email
+* Tambah [surat undangan](public/29.02.2020/surat_undangan.pdf)
 
 # Revisi 6
 
 * Tambah setting untuk matikan pilihan event registrasi
+
+# Revisi 7
+
+* Tambah opsi edit peserta

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Country;
+use App\Event;
 use App\User;
 use App\Mail\Ticket;
 use Auth;
@@ -31,7 +33,14 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
     	$user = User::find($id);
-        return view('admin.user.index')->with('user', $user);
+        $countries = Country::orderBy('name', 'asc')->get();
+        $events = Event::where('active', true)->get();
+
+        return view('admin.user.index', [
+            'user' => $user,
+            'countries' => $countries,
+            'events' => $events,
+        ]);
     }
     public function destroy(Request $request, $id)
     {
@@ -127,5 +136,46 @@ class UserController extends Controller
         imagedestroy($jpg_image);
 
         return $contents;
+    }
+    public function store(Request $request, $id)
+    {
+        $user = User::where('id', $id)->first();
+
+        $this->validate($request, [
+            'event_id' => ['required', 'numeric'],
+
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
+
+            'sex' => ['required', 'string', 'max:1'],
+            'nationality' => ['required', 'string'],
+            'id_type' => ['required', 'string'],
+            'id_number' => ['required', 'string'],
+            'date_of_birth' => ['required', 'date'],
+            'phone' => ['required', 'numeric'],
+            'community_name' => ['required', 'string'],
+            'community_type' => ['required', 'string'],
+            't_shirt' => ['required', 'string'],
+        ]);
+
+        $user->update([
+            'event_id' => $request->event_id,
+
+            'name' => $request->name,
+            'email' => $request->email,
+
+            'sex' => $request->sex,
+            'nationality' => $request->nationality,
+            'id_type' => $request->id_type,
+            'id_number' => $request->id_number,
+            'date_of_birth' => $request->date_of_birth,
+            'phone' => $request->phone,
+            'community_name' => $request->community_name,
+            'community_type' => $request->community_type,
+            't_shirt' => $request->t_shirt,
+        ]);
+        
+        return redirect()->route('admin.user.show', ['id' => $id])
+        ->with('success','You have successfully update user data.');
     }
 }
