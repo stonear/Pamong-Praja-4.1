@@ -214,7 +214,7 @@
         <img src="{{ URL::to('/') }}/20.02.2020/01.png" class="img-fluid" alt="Responsive image" width="100%" height="auto" />
         <div class="container">
             <div class="text-center">
-                <img src="{{ URL::to('/') }}/20.02.2020/06.png" class="img-fluid" alt="Responsive image" />
+                <img src="{{ URL::to('/') }}/06.03.2020/06.png" class="img-fluid" alt="Responsive image" />
             </div>
             <h3 class="text-center bosc">Tentang Event</h3>
             <p class="text-justify about">
