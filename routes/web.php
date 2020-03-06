@@ -36,6 +36,7 @@ Route::middleware(['is_admin'])->group(function () {
 	Route::get('admin/user/{id}/reject', 'Admin\UserController@reject')->name('admin.user.reject');
 	Route::get('admin/user/{id}/unverify', 'Admin\UserController@unverify')->name('admin.user.unverify');
 	Route::get('admin/user/{id}/ticket', 'Admin\UserController@ticket')->name('admin.user.ticket');
+	Route::get('admin/user/{id}/ticketPrint', 'Admin\UserController@ticketPrint')->name('admin.user.ticket.print');
 	Route::post('admin/user/{id}/password', 'Admin\UserController@password')->name('admin.user.password');
 	Route::get('admin/barcode', 'Admin\BarcodeController@index')->name('admin.barcode');
 	Route::get('admin/barcode/{UID?}', 'Admin\BarcodeController@search')->name('admin.barcode.search');

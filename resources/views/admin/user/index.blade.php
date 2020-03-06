@@ -39,6 +39,7 @@
 					<a href="{{ route('admin.user.reject', ['id' => $user->id]) }}" class="btn btn-danger btn-block mb-3">Reject</a>
 					@else
 					<a href="{{ route('admin.user.ticket', ['id' => $user->id]) }}" class="btn btn-success btn-block mb-3">Get Ticket</a>
+					<a href="{{ route('admin.user.ticket.print', ['id' => $user->id]) }}" class="btn btn-info btn-block mb-3" target="_blank">Print Ticket</a>
 					<a href="{{ route('admin.user.unverify', ['id' => $user->id]) }}" class="btn btn-danger btn-block mb-3">Unverify</a>
 					@endif
 					<hr/>
@@ -85,7 +86,7 @@
 							<label for="t_shirt" class="col-md-4 col-form-label text-md-right">Ukuran Baju<br>(Khusus Fun Run)</label>
 
 							<div class="col-md-6">
-								{{-- <input id="t_shirt" type="text" class="form-control" name="t_shirt" value="{{ $user->t_shirt }}" autofocus> --}}
+								{{-- <input id="t_shirt" type="text" class="form-control" name="t_shirt" value="{{ $user->t_shirt }}"> --}}
 								<select class="form-control" id="t_shirt" name="t_shirt" required>
 	                                <option value="-" {{ ($user->t_shirt == '-') ? 'selected' : '' }}>-</option>
 	                                <option value="XS" {{ ($user->t_shirt == 'XS') ? 'selected' : '' }}>XS</option>
@@ -105,7 +106,7 @@
 							<label for="id" class="col-md-4 col-form-label text-md-right">ID</label>
 
 							<div class="col-md-6">
-								<input id="id" type="text" class="form-control" name="id" value="{{ $user->UID }}" autofocus disabled>
+								<input id="id" type="text" class="form-control" name="id" value="{{ $user->UID }}" disabled>
 							</div>
 						</div>
 
@@ -113,7 +114,7 @@
 							<label for="name" class="col-md-4 col-form-label text-md-right">Nama</label>
 
 							<div class="col-md-6">
-								<input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}" autofocus>
+								<input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}">
 							</div>
 						</div>
 

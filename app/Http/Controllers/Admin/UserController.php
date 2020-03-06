@@ -92,6 +92,14 @@ class UserController extends Controller
 
         exit;
     }
+    public function ticketPrint(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        return view('admin.user.ticket', [
+            'user' => $user,
+        ]);
+    }
     public function password(Request $request, $id)
     {
         $this->validate($request, [

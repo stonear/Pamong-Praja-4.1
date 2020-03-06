@@ -38,3 +38,8 @@
 # Revisi 7
 
 * Tambah opsi edit peserta
+
+# Revisi 8
+
+* Print Tiket Admin
+* Tambah logo sponsor
