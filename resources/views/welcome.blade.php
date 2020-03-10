@@ -208,7 +208,17 @@
         if($now <= $to) $diff = $to->diff($now)->format("%a");
         else $diff = 0;
         @endphp
-        <marquee behavior="scroll" direction="left" class=""><h3><b>Counting Down: H – {{ $diff }}</b></h3></marquee>
+        <marquee behavior="scroll" direction="left" class="">
+            <h3>
+                <b>
+                    Counting Down: H – {{ $diff }}
+                    @for($i = 0; $i < 20; $i++)
+                        &nbsp;
+                    @endfor
+                    Pendaftaran grup (min 10 orang) paling akhir tanggal 15 Maret 2020 melalui Pamong Jaga.
+                </b>
+            </h3>
+        </marquee>
     </div>
     <section id="home">
         <img src="{{ URL::to('/') }}/20.02.2020/01.png" class="img-fluid" alt="Responsive image" width="100%" height="auto" />
