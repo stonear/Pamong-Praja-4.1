@@ -220,6 +220,9 @@
             </h3>
         </marquee>
     </div>
+    <div style="text-align:center">
+        <iframe src="https://drive.google.com/file/d/1WDx0nrZ207-mYDWBiUqHeScqs08wat2t/preview" frameborder="false" width="100%" height="720"></iframe>
+    </div>
     <section id="home">
         <img src="{{ URL::to('/') }}/20.02.2020/01.png" class="img-fluid" alt="Responsive image" width="100%" height="auto" />
         <div class="container">

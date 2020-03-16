@@ -43,3 +43,7 @@
 
 * Print Tiket Admin
 * Tambah logo sponsor
+
+# Revisi 9
+
+* Tambah [PEMBATALAN DAN PENUNDAAN KEGIATAN PAMONG PRAJA 4.1 TAHUN 2020](public/16.03.2020/announcement.pdf)
